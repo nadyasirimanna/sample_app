@@ -1,0 +1,23 @@
+{
+  "name": "sample_app",
+  "version": "1.0.0",
+  "description": "Sample App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadyasirimanna/sample_app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nadyasirimanna/sample_app/issues"
+  },
+  "homepage": "https://github.com/nadyasirimanna/sample_app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
