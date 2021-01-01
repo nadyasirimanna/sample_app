@@ -3,7 +3,7 @@ const { PORT = 4000 } = process.env;
 
 
 app.get('/', function (req, res) {
-  res.send('hello world nodejs')
+  res.send('hello world nodejs gke')
 })
 
 app.listen(PORT, () => {
