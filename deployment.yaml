@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: sample-app
-  name: sample-app
+    app: auth-service-dev
+  name: auth-service-dev
   namespace: default
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: sample-app
+      app: auth-service-dev
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,19 +18,19 @@ spec:
   template:
     metadata:
       labels:
-        app: sample-app
+        app: auth-service-dev
     spec:
       containers:
-        - image: gcr.io/sample-app-300415/github.com/nadyasirimanna/sample_app
+        - image: gcr.io/auth-api-300416/github.com/nadyasirimanna/auth-service
           imagePullPolicy: IfNotPresent
-          name: sample-app-1
+          name: auth-service-1
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app: sample-app
-  name: sample-app-hpa-x6nx
+    app: auth-service-dev
+  name: auth-service-dev-hpa-iabs
   namespace: default
 spec:
   maxReplicas: 5
@@ -43,4 +43,4 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: sample-app
+    name: auth-service-dev
